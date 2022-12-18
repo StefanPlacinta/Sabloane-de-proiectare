@@ -7,6 +7,7 @@ public class ImageProxy implements Pictures,Element{
     private String url;
     private Dimension dim;
     private Image realImg;
+    private String text;
     public void loadImage() {
         if (realImg == null){
             realImg = new Image(url);
@@ -42,6 +43,9 @@ public class ImageProxy implements Pictures,Element{
 
     @Override
     public void accept(Visitor visitor) {
-
+        visitor.visitImageProxy(this);
+    }
+    public String getText(){
+        return text;
     }
 }

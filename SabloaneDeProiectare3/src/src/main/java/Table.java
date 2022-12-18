@@ -2,7 +2,7 @@ package main.java;
 
 public class Table implements Element{
     private String title;
-
+    private String text;
     public Table(String title) {
         this.title = title;
     }
@@ -24,5 +24,8 @@ public class Table implements Element{
     @Override
     public void accept(Visitor visitor) {
         visitor.visitTable(this);
+    }
+    public String getText(){
+        return text;
     }
 }
